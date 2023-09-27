@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6f9905c796.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="weather1.css">
+    <title>Live Weather API</title>
+</head>
+
+
+<body>
+    <div class="card">
+        <div class="card-body">
+            <div class="weather-sun"> <i class="fa-solid fa-sun" style="color:rgb(179, 179, 35)"></i></div>
+            <p class="card-text placeholder-glow">
+                <span class="placeholder col-7">
+                    <h2><i class="fa-solid fa-street-view"></i> {%location%},INDIA </h2>
+                    <p class="date">Thu | Sep 21 | 10:40 AM</p>
+                    <h1 class="temp"> Temp : {%tempval%}°C</h1>
+                    <h3 class="tem_min_max">Min {%tempmin%}°C | Max {%tempmax%}°C</h3>
+                </span>
+            </p>
+        </div>
+    </div>
+
+
+    
+    <!-- java script code  -->
+    <script>
+        // java-script DOM 
+        const liveDate = document.querySelector(".date");
+
+
+        // Java-script for Date
+        // getCurrentDay1 for weekDay 
+        const getCurrentDay1 = () => {
+            var weekday = new Array(7);
+            weekday[0] = "sunday";
+            weekday[1] = "monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+            let currentTime = new Date();
+            let day = weekday[currentTime.getDay()]
+            return day;
+        }
+        // getCurrentDate2 for date, month & time 
+        const getCurrentDate2 = () => {
+            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var currentDate = new Date(); // in this new date function = [new Date("1995-02-14");] present.
+            var date = currentDate.getDate(); // Corrected: Add parentheses to call the method
+            var month = months[currentDate.getMonth()];
+            var hour = currentDate.getHours(); //for hour
+            var minutes = currentDate.getMinutes(); //for minutes
+            let periods = hour >= 12 ? "PM" : "AM";
+            return `${month} ${date} | ${hour}:${minutes} ${periods}`
+        }
+        // for innerHTML
+        liveDate.innerHTML = getCurrentDay1() + " | " + getCurrentDate2();
+    </script>
+
+
+</body>
+
+</html>
