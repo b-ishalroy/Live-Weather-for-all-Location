@@ -49,6 +49,14 @@
 <body>
     <div class="card">
         <div class="card-body">
+            <!-- navbar -->
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                  <a class="navbar-brand">City Name</a>
+                  <button id="backButton">Discover your town's weather information.</button>
+                </div>
+              </nav>
+            <!-- content of this card  -->
             <div class="weather-sun"><i class="fa-solid fa-sun" style="color: #7f9012;"></i></div>
             <p class="card-text placeholder-glow">
                 <span class="placeholder">
@@ -66,6 +74,11 @@
 
     <!-- java script code  -->
     <script>
+            // Add a click event listener to the button
+            document.getElementById('backButton').addEventListener('click', function () {
+            // Use the window.history object to go back one step in the browser's history
+            window.history.back();
+        });
         // java-script DOM 
         const liveDate = document.querySelector(".date");
         const weatherInfoPic = document.querySelector(".weather-sun");   // temp status = sun/cloud    
@@ -77,11 +90,14 @@ const temp_Status = "{%tempstatus%}";
 if (temp_Status == "Sunny") {
     weatherInfoPic.innerHTML = " <i class=`fa-solid fa-cloud fa-xl' style='color: #1556c6;'></i> ";
 }
-else if (temp_Status == "Cloud") {
+else if (temp_Status == "Clouds") {
     weatherInfoPic.innerHTML = "  <i class='fa-solid fa-cloud fa-xl' style='color:rgb(179, 179, 35)'></i> ";
 }
 else if (temp_Status == "Rain") {
     weatherInfoPic.innerHTML = " <i class='fa-solid fa-cloud-rain fa-xl' style='color: #581ca0;'></i> ";
+}
+else if (temp_Status == "snow") {
+    weatherInfoPic.innerHTML = " <i class='fa-solid fa-cloud-snowflake fa-xl' style='color: #581ca0;'></i> ";
 }
 else {
     weatherInfoPic.innerHTML = "  <i class='fa-solid fa-rainbow fa-xl' style='color: #27a03b;'></i> ";
