@@ -1,4 +1,4 @@
-# TempTracker
+# Live Weather Ditection for all the location
 This project based on  API, where we can check our real time Weather Report.
 # Live Weather API
 
@@ -9,7 +9,7 @@ This project is a simple web application that fetches and displays live weather 
 ## Features
 
 - Real-time weather data retrieval.
-- Display of temperature in Celsius.
+- Display of temperature in Celsius with max & min temp + location with time.
 - Clean and minimalistic card design.
 
 ## Technologies Used
@@ -17,7 +17,7 @@ This project is a simple web application that fetches and displays live weather 
 - HTML, CSS, and JavaScript for the frontend.
 - Node.js for the backend.
 - External libraries and APIs:
-  - Bootstrap for styling.
+  - Bootstrap for styling + own css code.
   - Font Awesome for icons.
   - OpenWeatherMap API for weather data.
 
