@@ -1,7 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 var requests = require('requests');
-const weatherHtmlFile = fs.readFileSync("weather1.html", "utf-8")
+const weatherHtmlFile = fs.readFileSync("index.html", "utf-8")
 // console.log(weatherHtmlFile);
 
 const replaceval = (tempval, orgval) => {
